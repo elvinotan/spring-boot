@@ -262,9 +262,9 @@ Developer juga dapat memberikan nilai property pada saat menjalankan jar</br>
 17. Internationalization
 Tujuannya untuk meng-support berbagai macam bahasa
 ```
-folder
-	resource/messages/hello.properties
-	resource/messages/hello_id_ID.properties
+Buat file properties di folder resources
+	/messages/hello.properties
+	/messages/hello_id_ID.properties
 	
 @Bean(name="messageSource")
 public MessageSource createMessgeSource() {
