@@ -23,6 +23,7 @@ Spring Boot : Object/Class Oriented</p>
 Pada saat pembuatan project kita akan mendapatkan :</br>
 a. Configurasi project ada di poem.xml</br>
 b. Starter class SpringBootApplication.java</br>
+
 ```
 @SpringBootApplication
 public class SpringOauth2Application {
@@ -32,3 +33,6 @@ public class SpringOauth2Application {
 	}
 }	
 ```
+Untuk menjalankan :
+a. Jalankan layaknya java main
+b. Gunakna maven mvnw spring-boot:run
