@@ -7,4 +7,4 @@ Untuk referensi lengkap lihat https://docs.spring.io/spring-boot/docs/current/re
 ![Spring Framework](https://github.com/elvinotan/spring-boot/blob/master/images/springframework.png)</br>
 
 02. Inversion of Control and Dependency Injection
-![Inversion of Control and Dependency Injection](https://github.com/elvinotan/spring-boot/blob/master/images/Inversion of Control and Dependency Injection.gif)</br>
+![Inversion of Control and Dependency Injection](https://github.com/elvinotan/spring-boot/blob/master/images/ioc.gif)</br>
