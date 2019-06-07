@@ -48,15 +48,18 @@ Pembuatan object degan IoC
 ```
 	@Bean
 	private DataBean getDataBean() {
-		return DataBena();
+		return DataBean();
 	}
 	
 	//dilain tampat
 	@Autowired
 	private Databean dataBean;
+	
+	Application context = ...;
+	DataBean bean = context.getBean(DataBean.class)
 ```
 Penamaan method pada anotasi @Bean bebas, krn yang dilihat adalah object returnan</br>
 Bila ada 2 Object yang sama yang di return akan bentrok, kita harus pake qualifier untuk membedakannya</br>
-Gunakan @Autowired untuk mengambil object dari container, atau lewat applicationContext, context.getBean(DataBean.class);</br>
+Gunakan @Autowired untuk mengambil object dari container, atau lewat applicationContext</br>
 
 06. Dependency Injection
