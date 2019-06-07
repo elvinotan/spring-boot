@@ -129,3 +129,15 @@ bisa juga menggunakan @Primary</br>
 	SampleBean bean = context.getBean(SampleBean.class);
 	System.out.println(bean.dataBean);
 ```
+
+08. Dependency Injection 3</br>
+Excercise : Buat OtherBean yang dependence ke DataBean('bean2') dan SampleBean</br>
+
+09. Circular Dependency</br>
+Object A depend B</br>
+Object B depend C</br>
+Object C depend A</br>
+@Configuration : Menandakan ini adalah class Configuration yg akan di inisitate pertama kali</br>
+Agar configurasi class ke load kita gunakan anotation @Import({Classname}.class) di SpringBootApplication</br>
+
+10. Component
