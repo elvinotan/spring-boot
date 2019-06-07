@@ -152,3 +152,17 @@ Agar configurasi class ke load kita gunakan anotation @Import({Classname}.class)
 	System.out.println(bean);
 
 ```
+11. Component Injection</br>
+Spring mewajibkan untuk membuat constractor kosong, terkecuali di define @Autowired</br>
+Bila object tidak memiliki Constractor, sebenarnya ada constractor 1,yaitu constractor kosong</br>
+```
+@Component
+public class SayHello {
+	private DataBean bean;
+	
+	@Autowired
+	public SayHello(DataBean bean) {
+		this.bean = bean;  
+	}
+```
+Pastikan saja untuk DataBean di beri anotasi @Component sehigga bisa di generate oleh spring</br>
