@@ -369,8 +369,8 @@ public class PersonValidator implements Validator {
 ```
 Untuk memvalidate semua object yg turunan dari Audit.class, caranya
 ```
-	@Override
-	public boolean supports(Class<?> clazz) {
-		return Audit.class.isAssignableFrom(clazz);
-	}
+@Override
+public boolean supports(Class<?> clazz) {
+	return Audit.class.isAssignableFrom(clazz);
+}
 ```
