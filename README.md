@@ -55,6 +55,7 @@ Pembuatan object degan IoC
 	@Autowired
 	private Databean dataBean;
 	
+	//dilain tampat
 	Application context = ...;
 	DataBean bean = context.getBean(DataBean.class)
 ```
