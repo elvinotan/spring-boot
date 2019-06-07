@@ -254,3 +254,7 @@ Mirip dengan @Qualifier, kita butuh mendeklarasikan mode apa yang kita kan gunak
 System.setProperty("spring.profiles.active", "development");
 ```
 Apabila developer tidak membrikan property maka secara default, spring mencari profile default, dan bila tidak ada juga maka akan error</br>
+Developer juga dapat memberikan nilai property pada saat menjalankan jar</br>
+```
+-Dspring.profiles.active=dev
+```
