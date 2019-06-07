@@ -347,3 +347,23 @@ Atau dengan menggunkan @Value yang mengambil default application.properties</br>
 @Value("${application.name}")
 private String applicationName;
 ```	
+
+20. Spring Validation</br>
+Tool untuk men-validate object </br>
+Untuk membuat validator kita cukup mengimplentasi Validator dan implement supprt untuk check jenis Object apa yang kita support untuk validasi</br>
+```
+public class PersonValidator implements Validator {
+	public boolean supports(Class clazz) {
+		return Person.class.equeals(clazz);
+	}
+	
+	public void validate(Object object, Errors e) {
+		Person p = (Person) object;
+		ValidationUtils.rejectIfEmpty(e, "name", "name.empty");
+		
+		if (p.getAge() < 0 ) {
+			e.rejectValue("age","negativevalue");
+		}
+	}
+}
+```
