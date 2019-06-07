@@ -209,7 +209,6 @@ public class ObjectBean {
 Sebuah interface yang dapat kita implemenetasi untuk mengakcess object yang ada di awareness tsb</br>
 ```
 public class DataBean implements ApplicationContextAware{
-
 	@Override
 	public void setApplicationContext(ApplicationContext app) throws BeansException {
 		this.app = app;
@@ -217,3 +216,20 @@ public class DataBean implements ApplicationContextAware{
 }
 ```
 Selain ApplicationContextAware spring juga meng-support untuk aware yang lain, untuk info lebih lanjut mohon lihat referensi</br>
+
+15. Extensions Point</br>
+Kalo pada Lifecycle kita memiliki hak access untuk @PostConstract dan @PreDestory, namun event ini terjadi pada object itu sendiri</br>
+Bagaiman kalo kita ingin event yang sama tapi dari pihak luar dari object itu, maka yang kita perlukan adalah Extensions Point</br>
+Extensions Point memiliki byk macam, kita akan bahas 1 saja</br>
+```
+@Component
+public class LogPlugin extends InstantiationAwareBeanPostProcessorAdapter {
+	@Override
+	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+		System.out.println("Created object "+beanName);
+		retur bean;
+	}
+}
+```
+
+16. Profile
