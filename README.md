@@ -188,3 +188,19 @@ Scope juga bisa di pasang pada class</br>
 public class OtherNewBan {
 }
 ```
+
+13. Lifecycle</br>
+Kadang kita perlu suatu event yang dijalankan pada saat setelah Bean di buat, dan saat Bean sebelum di Destroy</br>
+Spring mendukung ini dgn menggunakan anotation yg di pasang pada suatu method</br>
+@PostConstract : Akan menjalankan method setelah object di constract</br>
+@PreDestroy  : Akan menjalankan method ini sebelum object di destroy</br>
+PreDestory hanya di panggil apabila object tersebut bersifat singleton, untuk object yang bersifat prototype akan menjadi tanggung jawab programer</br>
+```
+public class ObjectBean {
+	@PostConstract 
+	public void init() {}
+	
+	@PreDestroy 
+	public void destory() {}
+}
+```
