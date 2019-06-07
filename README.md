@@ -388,7 +388,7 @@ if (r.hasErrors()) {
 }
 ```
 
-21 Bean Validation
+21 Bean Validation</br>
 Kalo di lihat pada no 20, Untuk process validate cukup rumit, maka itu muncul lah mekanisme validate yang berupa anotation</br>
 ```
 public class User {
