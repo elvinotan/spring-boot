@@ -166,3 +166,24 @@ public class SayHello {
 	}
 ```
 Pastikan saja untuk DataBean di beri anotasi @Component sehigga bisa di generate oleh spring</br>
+
+12. Scope</br>
+Scope ini mengacu pada bagimana spring memperlakukan object pada saat object itu diminta</br>
+@Scope("singleton") : Object hanya di buata sekali dan setiap permintaan akan oper object yang sama, Secara default spring menerapkan prinsip ini</br>
+@Scope("prototype") : Object akan selalu di buat baru pada saat permintaan</br>
+@Scope("session") : Object akan di buat setiap instance session di buat di web framework</br>
+@Scope("request") : Object akan di buat setiap ada request di web framework</br>
+
+```
+@Bean
+@Scope("prototype")
+public DataBean createBean() {
+	return new DataBean();
+```
+Scope juga bisa di pasang pada class</br>
+```
+@Component
+@Scope('prototype')
+public class OtherNewBan {
+}
+```
