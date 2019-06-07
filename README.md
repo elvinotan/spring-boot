@@ -11,7 +11,8 @@ Tradisional : Manual injection, passing lewat constractor atau setter getter</br
 Spring way : Injection object, butuh contractor kosong, Object bersifat single</br>
 ![Inversion of Control and Dependency Injection](https://github.com/elvinotan/spring-boot/blob/master/images/ioc.gif)</br>
 
-Cara buat project Spring-Boot :</br>
+
+03. Membuat Project Spring </br>
 a. Manually : Buat maven project dan pasang dependecies</br>
 b. Website : https://start.spring.io/. Pilih dependencies dan import project</br>
 c. STS > Spring starter project : Mirip dgn Website tapi sudah terintegrasi dgn editor</p>
@@ -37,3 +38,9 @@ Untuk menjalankan :</br>
 a. Jalankan layaknya java main</br>
 b. Gunakna maven ```mvnw spring-boot:run```</br>
 c. Gunakna maven, untuk generate runable jar  ```mvnw clean package```</br>
+
+04. Container</br>
+Pada Spring semua object yang di create di sebut dgn @Bean, yang akan di simpan dalam container</br>
+Pada saat pertama kali jalan SpringBoot akan menload semua konfigurasi yang ada di @SpringBootApplication dan semua class di dalam pathnya
+
+05. 
