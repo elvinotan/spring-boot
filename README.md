@@ -60,7 +60,6 @@ Pembuatan object degan IoC
 	DataBean bean = context.getBean(DataBean.class)
 ```
 Penamaan method pada anotasi @Bean bebas, krn yang dilihat adalah object returnan</br>
-Bila ada 2 Object yang sama yang di return akan bentrok, kita harus pake qualifier untuk membedakannya</br>
 Gunakan @Autowired untuk mengambil object dari container, atau lewat applicationContext</br>
 
 06. Dependency Injection</br>
@@ -83,3 +82,50 @@ Otomatis injection lewat parameter DataBean</br>
 ```
 
 07. Dependency Injection 2</br>
+Untuk container bisa membedakan antara object a dan b, itu berdasarkan pada classname,</br>
+sehingga bila ada 2 deklarsi seperti dibawah ini makan akan error, untuk mengatasi
+hal ini kita perlu membedakannya dgn memberi nama pada bean dgn syarat pada saat ambil juga harus tau berdasarkan apa, 
+bisa juga menggunakan @Primary</br>
+```
+	@Bean
+	private DataBean getDataBean() {
+		return DataBean();
+	}
+	
+	@Bean
+	private DataBean getDataBean2() {
+		return DataBean();
+	}
+	
+	@Bean
+	private SampleBean createSampleBean(DataBean databean) {
+		return new SampleBean(databean);
+	}
+	
+	//dilain tampat
+	Application context = ...;
+	SampleBean bean = context.getBean(SampleBean.class);
+	System.out.println(bean.dataBean);
+```
+
+```
+	@Bean(name = "bean1")
+	private DataBean getDataBean() {
+		return DataBean();
+	}
+	
+	@Bean(name = "bean2")
+	private DataBean getDataBean2() {
+		return DataBean();
+	}
+	
+	@Bean
+	private SampleBean createSampleBean(@Qualifier("bean1") DataBean databean) {
+		return new SampleBean(databean);
+	}
+	
+	//dilain tampat
+	Application context = ...;
+	SampleBean bean = context.getBean(SampleBean.class);
+	System.out.println(bean.dataBean);
+```
