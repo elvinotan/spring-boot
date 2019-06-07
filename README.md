@@ -232,4 +232,25 @@ public class LogPlugin extends InstantiationAwareBeanPostProcessorAdapter {
 }
 ```
 
-16. Profile
+16. Profile</br>
+Profile ini buat untuk menentukan aplikasi berjalan dalam mode apa</br>
+Pada umumnya ini di gunakan devleoper untuk membedakna antara development dan production</br>
+Kita bisa menggunakan profile dgn memberikan anotation @Profile</br>
+```
+@Bean
+@Profile("dev")
+public Data getDataDev() {
+	return new Data();
+}
+
+@Bean
+@Profile("prod")
+public Data getDataProd() {
+	return new Data();
+}
+```
+Mirip dengan @Qualifier, kita butuh mendeklarasikan mode apa yang kita kan gunakan, bisa dgn application.properties maupun lewat program</br>
+```
+System.setProperty("spring.profiles.active", "development");
+```
+Apabila developer tidak membrikan property maka secara default, spring mencari profile default, dan bila tidak ada juga maka akan error</br>
