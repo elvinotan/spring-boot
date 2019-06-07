@@ -179,6 +179,7 @@ Scope ini mengacu pada bagimana spring memperlakukan object pada saat object itu
 @Scope("prototype")
 public DataBean createBean() {
 	return new DataBean();
+}
 ```
 Scope juga bisa di pasang pada class</br>
 ```
