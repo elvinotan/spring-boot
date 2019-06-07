@@ -321,3 +321,29 @@ public class FileBean implements ResourceLoaderAware {
 ```
 
 19. Property Source
+Tool yang di buat untuk meng-access property file</br>
+```
+@Configuration
+@PropertySource("classpath:/com/app.properties")
+public class Config{
+	@Autowire
+	Enviroment env;
+	
+	public String getPropery() {
+		return env.getProperty("application.name");
+	}
+}	
+```
+Bila ingin meload lebih dari 1 properties file bisa dilakukan dgn cara</br>
+```
+@Configuration
+@PropertySources({
+	@PropertySource("classpath:/com/app.properties")
+	@PropertySource("classpath:/com/app1.properties")
+})
+```
+Atau dengan menggunkan @Value yang mengambil default application.properties</br>
+```
+	@Value("${application.name}")
+	private String applicationName;
+```	
