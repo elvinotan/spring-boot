@@ -63,8 +63,8 @@ Penamaan method pada anotasi @Bean bebas, krn yang dilihat adalah object returna
 Bila ada 2 Object yang sama yang di return akan bentrok, kita harus pake qualifier untuk membedakannya</br>
 Gunakan @Autowired untuk mengambil object dari container, atau lewat applicationContext</br>
 
-06. Dependency Injection
-Otomatis injection lewat parameter DataBean
+06. Dependency Injection</br>
+Otomatis injection lewat parameter DataBean</br>
 ```
 	@Bean
 	private DataBean getDataBean() {
@@ -82,4 +82,4 @@ Otomatis injection lewat parameter DataBean
 	System.out.println(bean.dataBean);
 ```
 
-07. Dependency Injection 2
+07. Dependency Injection 2</br>
