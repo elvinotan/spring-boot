@@ -43,4 +43,20 @@ c. Gunakna maven, untuk generate runable jar  ```mvnw clean package```</br>
 Pada Spring semua object yang di create di sebut dgn @Bean, yang akan di simpan dalam container</br>
 Pada saat pertama kali jalan SpringBoot akan menload semua konfigurasi yang ada di @SpringBootApplication dan semua class di dalam pathnya
 
-05. 
+05. Bean</br>
+Pembuatan object degan IoC
+```
+	@Bean
+	private DataBean getDataBean() {
+		return DataBena();
+	}
+	
+	//dilain tampat
+	@Autowired
+	private Databean dataBean;
+```
+Penamaan method pada anotasi @Bean bebas, krn yang dilihat adalah object returnan</br>
+Bila ada 2 Object yang sama yang di return akan bentrok, kita harus pake qualifier untuk membedakannya</br>
+Gunakan @Autowired untuk mengambil object dari container, atau lewat applicationContext, context.getBean(DataBean.class);</br>
+
+06. Dependency Injection
