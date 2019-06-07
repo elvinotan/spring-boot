@@ -293,3 +293,31 @@ Cara ubah locale secara progamtically
 	Locale.ssetDefault(new Locale("in", "ID"));
 ```
 Message juga bis meng-inject parameters
+
+18. Resource Loader</br>
+Class yang di buat oleh spring untuk meng-access suatu resource</br>
+Resource bisa berbagai bentuk misal : file, http, ftp dll....</br>
+Kita cukup menggunakan mengdeklarsikan parameter dan spring akan tau jenis resource apa yang kita coba akses (lihat refrence untuk lebih lanjut)</br>
+```
+@Component
+public class FileBean implements ResourceLoaderAware {
+	private ResourceLoader loader;
+	
+	@Override
+	public void setResourceLoader(ResourceLoader loader) {
+		this.loader = loader;
+	}
+	
+	public void printInfo() throws IOException {
+		Resource resource = loader.getResource("classpath:/resources/info.txt");
+		Scanner scanner = new Scanner(resource.getInputStream());
+		while (scanner.hasNextLine()) {
+			String line = scanner.nextline();
+			System.out.println("Line "+line);
+		}
+		scanner.close();
+	}
+}
+```
+
+19. Property Source
