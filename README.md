@@ -12,10 +12,23 @@ Spring way : Injection object, butuh contractor kosong, Object bersifat single</
 ![Inversion of Control and Dependency Injection](https://github.com/elvinotan/spring-boot/blob/master/images/ioc.gif)</br>
 
 Cara buat project Spring-Boot :</br>
-1. Manually : Buat maven project dan pasang dependecies</br>
-2. Website : https://start.spring.io/. Pilih dependencies dan import project</br>
-3. STS > Spring starter project : Mirip dgn Website tapi sudah terintegrasi dgn editor</p>
+a. Manually : Buat maven project dan pasang dependecies</br>
+b. Website : https://start.spring.io/. Pilih dependencies dan import project</br>
+c. STS > Spring starter project : Mirip dgn Website tapi sudah terintegrasi dgn editor</p>
 
 Beda Spring Framework dan Spring Boot</br>
 Spring Framework : XML Oriented</br>
-Spring Boot : Object/Class Oriented</br>
+Spring Boot : Object/Class Oriented</p>
+
+Pada saat pembuatan project kita akan mendapatkan :</br>
+a. Configurasi project ada di poem.xml</br>
+b. Starter class SpringBootApplication.java</br>
+```
+@SpringBootApplication
+public class SpringOauth2Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringOauth2Application.class, args);
+	}
+}	
+```
