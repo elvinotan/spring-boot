@@ -140,4 +140,15 @@ Object C depend A</br>
 @Configuration : Menandakan ini adalah class Configuration yg akan di inisitate pertama kali</br>
 Agar configurasi class ke load kita gunakan anotation @Import({Classname}.class) di SpringBootApplication</br>
 
-10. Component
+10. Component</br>
+@ComponentScan = Spring akan meng-scan semua package classpath dan bila ada tag @Component akan di create dan dimasukan dalam container</br>
+```
+	@Component
+	public class DataBean() {}
+	
+	//dilain tampat
+	Application context = ...;
+	DataBean bean = context.getBean(DataBean.class);
+	System.out.println(bean);
+
+```
