@@ -415,3 +415,8 @@ Cara menggunakannya </br>
 Validator validator = context.getBean(Validator.class);
 Set<ConstraintViolation<User>> result = validator.validate(user);
 ```
+
+Spring juga mendukung validate pada saat method call
+
+	
+```
