@@ -422,13 +422,11 @@ Spring juga mendukung validate pada saat method call
 Scope dari Expression Languange sangat besar</br>
 Intinya adalah Expresion Language layaknya seperti selector, yang dengan menggunakan expresison dapat mengaccess property dan method yang ada di continer</br>
 ```
-	@Component("author")
-	public Author{}
+@Component("author")
+public Author{}
 
-	@Autowired
-	public Contoh(@Value("#{ author.name }") String name, @Value("# {10 *10} ") int nilai) {
-	}
+@Autowired
+public Contoh(@Value("#{ author.name }") String name, @Value("# {10 *10} ") int nilai) {
+}
 ```
 
-	
-```
