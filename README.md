@@ -4,4 +4,7 @@
 Website : https://spring.io/</br>
 Spring Framework terdiri byk framework, tapi inti dari spring adalah Spring framework</br>
 Untuk referensi lengkap lihat https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/</br>
-![Virtual Machine Vs Container](https://github.com/elvinotan/spring-boot/blob/master/images/springframework.png)</br>
+![Spring Framework](https://github.com/elvinotan/spring-boot/blob/master/images/springframework.png)</br>
+
+02. Inversion of Control and Dependency Injection
+![Inversion of Control and Dependency Injection](https://github.com/elvinotan/spring-boot/blob/master/images/Inversion of Control and Dependency Injection.gif)</br>
