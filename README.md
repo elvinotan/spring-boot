@@ -33,6 +33,7 @@ public class SpringOauth2Application {
 	}
 }	
 ```
-Untuk menjalankan :
-a. Jalankan layaknya java main
-b. Gunakna maven mvnw spring-boot:run
+Untuk menjalankan :</br>
+a. Jalankan layaknya java main</br>
+b. Gunakna maven ```mvnw spring-boot:run```</br>
+c. Gunakna maven, untuk generate runable jar  ```mvnw clean package```</br>
