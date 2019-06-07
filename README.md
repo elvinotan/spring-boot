@@ -258,3 +258,38 @@ Developer juga dapat memberikan nilai property pada saat menjalankan jar</br>
 ```
 -Dspring.profiles.active=dev
 ```
+
+17. Internationalization
+Tujuannya untuk meng-support berbagai macam bahasa
+```
+folder
+	resource/messages/hello.properties
+	resource/messages/hello_id_ID.properties
+	
+@Bean(name="messageSource")
+public MessageSource createMessgeSource() {
+	ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+	messageSource.setBasename("messages.hello");
+	return messageSource;
+}	
+
+public class SayHello implements MessageSourceAware {
+
+	private MessageSource ms;
+
+	public String hello (String name) {
+		return ms.getMessage("hello", null, Locale.getDefault())+name;
+	}
+	
+	@Override
+	public void setMessageSource(MessageSource ms) {
+		this.ms = ms;
+	}
+}
+
+```
+Cara ubah locale secara progamtically
+```
+	Locale.ssetDefault(new Locale("in", "ID"));
+```
+Message juga bis meng-inject parameters
