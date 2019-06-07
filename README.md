@@ -64,3 +64,22 @@ Bila ada 2 Object yang sama yang di return akan bentrok, kita harus pake qualifi
 Gunakan @Autowired untuk mengambil object dari container, atau lewat applicationContext</br>
 
 06. Dependency Injection
+Otomatis injection lewat parameter DataBean
+```
+	@Bean
+	private DataBean getDataBean() {
+		return DataBean();
+	}
+	
+	@Bean
+	private SampleBean createSampleBean(DataBean databean) {
+		return new SampleBean(databean);
+	}
+	
+	//dilain tampat
+	Application context = ...;
+	SampleBean bean = context.getBean(SampleBean.class);
+	System.out.println(bean.dataBean);
+```
+
+07. Dependency Injection 2
