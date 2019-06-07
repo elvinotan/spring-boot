@@ -204,3 +204,16 @@ public class ObjectBean {
 	public void destory() {}
 }
 ```
+
+14. Aware</br>
+Sebuah interface yang dapat kita implemenetasi untuk mengakcess object yang ada di awareness tsb</br>
+```
+public class DataBean implements ApplicationContextAware{
+
+	@Override
+	public void setApplicationContext(ApplicationContext app) throws BeansException {
+		this.app = app;
+	}
+}
+```
+Selain ApplicationContextAware spring juga meng-support untuk aware yang lain, untuk info lebih lanjut mohon lihat referensi</br>
