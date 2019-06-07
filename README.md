@@ -374,3 +374,17 @@ public boolean supports(Class<?> clazz) {
 	return Audit.class.isAssignableFrom(clazz);
 }
 ```
+Untuk cara tesnya dilakukan
+```
+Person p = new Person();
+DataBinder binder = new DataBinder(p);
+binder.addValidators(new PersonValidator());
+binder.validate();
+BindingResult r = binder.getBindingResulet();
+if (r.hasErrors()) {
+	r.getAllErrors().steam().forEach((e) ->
+		System.out.println(messageSource.getMessage(e.getCode(), null, Locale.getDefault(());
+	)
+}
+```
+
