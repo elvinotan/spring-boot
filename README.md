@@ -388,3 +388,30 @@ if (r.hasErrors()) {
 }
 ```
 
+21 Bean Validation
+Kalo di lihat pada no 20, Untuk process validate cukup rumit, maka itu muncul lah mekanisme validate yang berupa anotation</br>
+```
+public class User {
+	@NotBlank
+	@Length(min=5)
+	public String id;
+	
+	@NotBlank
+	@Email
+	public String email;
+	
+	@NotBlank
+	public String name
+}
+
+@Bean
+public javax.validation.Validator createValidator() {
+	return new LocalValidatorFactoryBean();
+}
+```
+
+Cara menggunakannya </br>
+```
+Validator validator = context.getBean(Validator.class);
+Set<ConstraintViolation<User>> result = validator.validate(user);
+```
